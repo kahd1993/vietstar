@@ -70,7 +70,7 @@ public class ExportDao extends BaseDao {
         try {
             String sql = "SELECT * FROM(SELECT A.ID, A.CODE, B.NAME AS NSTORE, C.NAME AS CUSNAME, A.DATE, A.TOTAL_AMOUNT,"
                     + "   ROW_NUMBER() OVER(ORDER BY A.ID DESC) R"
-                    + "   FROM EXPORT A LEFT JOIN STORE B ON A.ID_STORE = B.ID AND EXPORT A LEFT JOIN CUSTOMER C ON A.ID_CUSTOMER = C.ID WHERE 1 = 1 ";
+                    + "   FROM EXPORT A JOIN STORE B ON A.ID_STORE = B.ID JOIN CUSTOMER C ON A.ID_CUSTOMER = C.ID WHERE 1 = 1 ";
             if (s != null && !"".equals(s)) {
                 sql += " AND (UPPER(A.CODE) LIKE '%" + s + "%' OR UPPER(NSTORE) LIKE '%" + s + "%'"
                         + "  OR UPPER(CUSNAME) LIKE '%" + s + "%' OR UPPER(A.DATE) LIKE '%" + s + "%'"

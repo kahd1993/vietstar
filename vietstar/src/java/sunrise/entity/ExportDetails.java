@@ -13,7 +13,10 @@ import java.math.BigDecimal;
  */
 public class ExportDetails {
     private int id_export;
+    private String ecode;
     private int id_product;
+    private String pname;
+    private BigDecimal pcost;
     private int quality;
     private BigDecimal price;
     private int row;
@@ -29,12 +32,36 @@ public class ExportDetails {
         this.id_export = id_export;
     }
 
+    public String getEcode() {
+        return ecode;
+    }
+
+    public void setEcode(String ecode) {
+        this.ecode = ecode;
+    }
+
     public int getId_product() {
         return id_product;
     }
 
     public void setId_product(int id_product) {
         this.id_product = id_product;
+    }
+
+    public String getPname() {
+        return pname;
+    }
+
+    public void setPname(String pname) {
+        this.pname = pname;
+    }
+
+    public BigDecimal getPcost() {
+        return pcost;
+    }
+
+    public void setPcost(BigDecimal pcost) {
+        this.pcost = pcost;
     }
 
     public int getQuality() {

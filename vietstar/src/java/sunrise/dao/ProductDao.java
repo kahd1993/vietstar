@@ -97,7 +97,7 @@ public class ProductDao extends BaseDao{
         try{
             String sql = "SELECT * FROM(SELECT A.ID, A.CODE, A.NAME, A.UNIT, A.QUALITY, B.NAME AS NSTORE, A.PURCHASE_PRICE, A.SELL_PRICE"
                     + "   ROW_NUMBER() OVER(ORDER BY A.ID DESC) R"
-                    + "   FROM PRODUCT A LEFT JOIN STORE ON A.ID_STORE = B.ID WHERE 1 = 1 ";
+                    + "   FROM PRODUCT A JOIN STORE ON A.ID_STORE = B.ID WHERE 1 = 1 ";
             if (s != null && !"".equals(s)) {
                 sql += " AND (UPPER(A.CODE) LIKE '%"+s+"%' OR UPPER(A.NAME) LIKE '%"+s+"%'"
                     + "  OR UPPER(A.UNIT) LIKE '%"+s+"%' OR UPPER(B.NAME) LIKE '%"+s+"%'"
