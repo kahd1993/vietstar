@@ -9,7 +9,7 @@ package sunrise.entity;
  *
  * @author Do Quoc Hoa
  */
-public class Customers {
+public class Suppliers {
     private int id;
     private String code;
     private String name;
@@ -19,17 +19,9 @@ public class Customers {
     private String email;
     private int numrow;
 
-    public Customers() {
+    public Suppliers() {
     }
 
-    public int getNumrow() {
-        return numrow;
-    }
-
-    public void setNumrow(int numrow) {
-        this.numrow = numrow;
-    }
-    
     public int getId() {
         return id;
     }
@@ -84,6 +76,14 @@ public class Customers {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getNumrow() {
+        return numrow;
+    }
+
+    public void setNumrow(int numrow) {
+        this.numrow = numrow;
     }
     
     
