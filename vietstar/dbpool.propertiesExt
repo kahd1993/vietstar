@@ -1,0 +1,9 @@
+orcl.minpool=2
+name=vietstar
+orcl.maxsize=20 
+orcl.password=123456
+drivers=com.microsoft.sqlserver.jdbc.SQLServerDriver
+orcl.maxpool=10
+orcl.idleTimeout=300
+orcl.user=sa
+orcl.url=jdbc:sqlserver://localhost:1433;databaseName=vietstar;
