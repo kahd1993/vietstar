@@ -11,7 +11,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
-import sunrise.constant.Constants;
 import static sunrise.constant.Constants.ACTIVE;
 import static sunrise.constant.Constants.DEACTIVE;
 import static sunrise.constant.Constants.IMG_ACTIVE;
@@ -22,7 +21,7 @@ import sunrise.entity.Users;
  *
  * @author zoncn
  */
-public class UsersDao extends BaseDao{
+public class UserDao extends BaseDao{
     public Users login(String usn, String pwd){
         Connection conn = null;
         PreparedStatement ps = null;
@@ -63,7 +62,7 @@ public class UsersDao extends BaseDao{
         PreparedStatement ps = null;
         try{
             String sql = "INSERT INTO [USER](USN, PWD, NAME, EMAIL, PHONE, ADDRESS, STATUS) "
-                    + "   VALUES(?, ?, ?, ?, ?)";
+                    + "   VALUES(?, ?, ?, ?, ?, ?, ?)";
             conn = getConnection();
             ps = conn.prepareStatement(sql);
             int i = 1;

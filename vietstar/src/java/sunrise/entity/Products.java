@@ -18,6 +18,7 @@ public class Products {
     private String unit;
     private int quality;
     private int id_store;
+    private String store_name;
     private BigDecimal purchase_price;
     private BigDecimal sell_price;
     private int row;
@@ -63,6 +64,14 @@ public class Products {
 
     public void setQuality(int quality) {
         this.quality = quality;
+    }
+
+    public String getStore_name() {
+        return store_name;
+    }
+
+    public void setStore_name(String store_name) {
+        this.store_name = store_name;
     }
 
     public int getId_store() {
