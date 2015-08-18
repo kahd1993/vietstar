@@ -29,7 +29,7 @@ public class ProductDao extends BaseDao{
             ps.setString(i++, pd.getCode());
             ps.setString(i++, pd.getName());
             ps.setString(i++, pd.getUnit());
-            ps.setInt(i++, pd.getQuality());
+            ps.setInt(i++, pd.getQuantity());
             ps.setInt(i++, pd.getId_store());
             ps.setBigDecimal(i++, pd.getPurchase_price());
             ps.setBigDecimal(i++, pd.getSell_price());
@@ -56,7 +56,7 @@ public class ProductDao extends BaseDao{
             ps.setString(i++, pd.getCode());
             ps.setString(i++, pd.getName());
             ps.setString(i++, pd.getUnit());
-            ps.setInt(i++, pd.getQuality());
+            ps.setInt(i++, pd.getQuantity());
             ps.setInt(i++, pd.getId_store());
             ps.setBigDecimal(i++, pd.getPurchase_price());
             ps.setBigDecimal(i++, pd.getSell_price());
@@ -116,7 +116,7 @@ public class ProductDao extends BaseDao{
                 pd.setCode(rs.getString(i++));
                 pd.setName(rs.getString(i++));
                 pd.setUnit(rs.getString(i++));
-                pd.setQuality(rs.getInt(i++));
+                pd.setQuantity(rs.getInt(i++));
                 pd.setStore_name(rs.getString(i++));
                 pd.setPurchase_price(rs.getBigDecimal(i++));
                 pd.setSell_price(rs.getBigDecimal(i++));
@@ -151,7 +151,7 @@ public class ProductDao extends BaseDao{
                 pd.setCode(rs.getString(i++));
                 pd.setName(rs.getString(i++));
                 pd.setUnit(rs.getString(i++));
-                pd.setQuality(rs.getInt(i++));
+                pd.setQuantity(rs.getInt(i++));
                 pd.setId_store(rs.getInt(i++));
                 pd.setPurchase_price(rs.getBigDecimal(i++));
                 pd.setSell_price(rs.getBigDecimal(i++));
@@ -163,5 +163,29 @@ public class ProductDao extends BaseDao{
             releaseConnection(conn, ps, rs);
         }
         return null;
+    }
+    
+    public boolean updateQuantity(int idPd, int quantity){
+        Connection conn = null;
+        PreparedStatement ps = null;
+        try{
+            String sql = "UPDATE PRODUCT SET QUANTITY = ?"
+                    + "   WHERE ID = ?";
+            
+            conn = getConnection();
+            ps = conn.prepareStatement(sql);
+            int i = 1;
+            ps.setInt(i++, quantity);
+            ps.setInt(i++, idPd);
+            
+            return ps.executeUpdate() == 1;
+            
+        }catch(Exception ex){
+            ex.printStackTrace();
+        }finally{
+            releaseConnection(conn, ps);
+        }
+        
+        return false;
     }
 }

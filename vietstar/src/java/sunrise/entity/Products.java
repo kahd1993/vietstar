@@ -16,7 +16,7 @@ public class Products {
     private String code;
     private String name;
     private String unit;
-    private int quality;
+    private int quantity;
     private int id_store;
     private String store_name;
     private BigDecimal purchase_price;
@@ -58,14 +58,14 @@ public class Products {
         this.unit = unit;
     }
 
-    public int getQuality() {
-        return quality;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuality(int quality) {
-        this.quality = quality;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
-
+    
     public String getStore_name() {
         return store_name;
     }

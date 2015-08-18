@@ -18,7 +18,7 @@ import sunrise.entity.ExportDetails;
  * @author zoncn
  */
 public class ExportDetailDao extends BaseDao{
-    public boolean insert(int epId, int idPd, int quality, BigDecimal price) {
+    public boolean insert(int epId, int idPd, int quantity, BigDecimal price) {
         Connection conn = null;
         PreparedStatement ps = null;
         try {
@@ -29,7 +29,7 @@ public class ExportDetailDao extends BaseDao{
             int i = 1;
             ps.setInt(i++, epId);
             ps.setInt(i++, idPd);
-            ps.setInt(i++, quality);
+            ps.setInt(i++, quantity);
             ps.setBigDecimal(i++, price);
 
             return ps.executeUpdate() == 1;
@@ -63,7 +63,7 @@ public class ExportDetailDao extends BaseDao{
                 epd.setId_product(rs.getInt(i++));
                 epd.setPname(rs.getString(i++));
                 epd.setPcost(rs.getBigDecimal(i++));
-                epd.setQuality(rs.getInt(i++));
+                epd.setQuantity(rs.getInt(i++));
                 epd.setPrice(rs.getBigDecimal(i++));
                 result.add(epd);
             }

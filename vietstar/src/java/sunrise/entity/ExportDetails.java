@@ -17,7 +17,7 @@ public class ExportDetails {
     private int id_product;
     private String pname;
     private BigDecimal pcost;
-    private int quality;
+    private int quantity;
     private BigDecimal price;
     private int row;
 
@@ -64,12 +64,12 @@ public class ExportDetails {
         this.pcost = pcost;
     }
 
-    public int getQuality() {
-        return quality;
+    public int getQuantity() {
+        return quantity;
     }
 
-    public void setQuality(int quality) {
-        this.quality = quality;
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
     }
 
     public BigDecimal getPrice() {
