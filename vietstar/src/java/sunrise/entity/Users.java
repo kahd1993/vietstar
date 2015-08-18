@@ -13,10 +13,13 @@ public class Users {
     private int id;
     private String usn;
     private String pwd;
+    private String name;
     private String email;
     private String phone;
     private String address;
     private int status;
+    private String img;
+    private boolean action;
     private int row;
 
     public Users() {
@@ -44,6 +47,14 @@ public class Users {
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
     }
 
     public String getEmail() {
@@ -76,6 +87,22 @@ public class Users {
 
     public void setStatus(int status) {
         this.status = status;
+    }
+
+    public String getImg() {
+        return img;
+    }
+
+    public void setImg(String img) {
+        this.img = img;
+    }
+
+    public boolean isAction() {
+        return action;
+    }
+
+    public void setAction(boolean action) {
+        this.action = action;
     }
 
     public int getRow() {
