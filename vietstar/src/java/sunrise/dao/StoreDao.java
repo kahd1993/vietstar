@@ -11,97 +11,88 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-import sunrise.entity.Customers;
+import sunrise.entity.Stores;
 
 /**
  *
  * @author Do Quoc Hoa
  */
-public class CustomerDao extends BaseDao{
-    public List<Customers> getAllCustomer(){
-        List<Customers> lstCus = null;
+public class StoreDao extends BaseDao{
+    public List<Stores> getAllCustomer(){
+        List<Stores> lstStores = null;
         Connection cnn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
         String sql = "";
         try{
-            sql = "     Select id, code, name, address, phone, fax, email, row_numer() over(order by id desc) R"
-                    + " from customer"
+            sql = "     Select id, code, name, address, row_numer() over(order by id desc) R"
+                    + " from store"
                     + " where 1 = 1";
             cnn = getConnection();
             pstm = cnn.prepareStatement(sql);
             rs = pstm.executeQuery();
-            Customers customer = null;
+            Stores store = null;
             while(rs.next()){
-                if(lstCus==null) lstCus = new ArrayList<>();
-                customer = new Customers();
+                if(lstStores==null) lstStores = new ArrayList<>();
+                store = new Stores();
                 int i = 1;
-                customer.setId(rs.getInt(i++));
-                customer.setCode(rs.getString(i++));
-                customer.setName(rs.getString(i++));
-                customer.setAddress(rs.getString(i++));
-                customer.setPhone(rs.getString(i++));
-                customer.setFax(rs.getString(i++));
-                customer.setEmail(rs.getString(i++));
-                customer.setNumrow(rs.getInt(i++));
-                lstCus.add(customer);
+                store.setId(rs.getInt(i++));
+                store.setCode(rs.getString(i++));
+                store.setName(rs.getString(i++));
+                store.setAddress(rs.getString(i++));
+                store.setNumrow(rs.getInt(i++));
+                lstStores.add(store);
             }
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
             releaseConnection(cnn, pstm, rs);
         }
-        return lstCus;
+        return lstStores;
     }
     
-    public Customers getRowById(int id){
+    public Stores getRowById(int id){
         Connection cnn = null;
         PreparedStatement pstm = null;
         ResultSet rs = null;
-        Customers customer = null;
+        Stores store = null;
         String sql = "";
         try{
-            sql = "     Select id, code, name, address, phone, fax, email"
-                    + " from customer"
+            sql = "     Select id, code, name, address"
+                    + " from store"
                     + " where id = ?";
             cnn = getConnection();
             pstm = cnn.prepareStatement(sql);
             pstm.setInt(1, id);
             rs = pstm.executeQuery();
             if (rs.next()) {
-                customer = new Customers();
+                store = new Stores();
                 int i = 1;
-                customer.setId(rs.getInt(i++));
-                customer.setCode(rs.getString(i++));
-                customer.setName(rs.getString(i++));
-                customer.setAddress(rs.getString(i++));
-                customer.setPhone(rs.getString(i++));
-                customer.setFax(rs.getString(i++));
-                customer.setEmail(rs.getString(i++));
+                store.setId(rs.getInt(i++));
+                store.setCode(rs.getString(i++));
+                store.setName(rs.getString(i++));
+                store.setAddress(rs.getString(i++));
             }
         }catch(SQLException ex){
             ex.printStackTrace();
         }finally{
             releaseConnection(cnn, pstm, rs);
         }
-        return customer;
+        return store;
     }
     
-    public boolean addCustomer(Customers customer){
+    public boolean addStore(Stores store){
         Connection cnn = null;
         PreparedStatement pstm = null;
         String sql = "";
         try{
-            sql = "Insert into customer(code,name,address,phone,fax,email) values(?,?,?,?,?,?)";
+            sql = "Insert into store(code,name,address) values(?,?,?)";
             cnn = getConnection();
             pstm = cnn.prepareStatement(sql);
             int i = 1;
-            pstm.setString(i++, customer.getCode());
-            pstm.setString(i++, customer.getName());
-            pstm.setString(i++, customer.getAddress());
-            pstm.setString(i++, customer.getPhone());
-            pstm.setString(i++, customer.getFax());
-            pstm.setString(i++, customer.getEmail());
+            pstm.setString(i++, store.getCode());
+            pstm.setString(i++, store.getName());
+            pstm.setString(i++, store.getAddress());
             return pstm.executeUpdate() == 1;
         }catch(SQLException ex){
             ex.printStackTrace();
@@ -111,23 +102,20 @@ public class CustomerDao extends BaseDao{
         return false;
     }
     
-    public boolean editCustomer(Customers customer){
+    public boolean editStore(Stores store){
         Connection cnn = null;
         PreparedStatement pstm = null;
         String sql = "";
         try{
-            sql = "     Update customer set code = ?, name = ?, address = ?, phone = ?, fax = ?, email = ?"
+            sql = "     Update store set code = ?, name = ?, address = ?"
                     + " where id = ?";
             cnn = getConnection();
             pstm = cnn.prepareStatement(sql);
             int i = 1;
-            pstm.setString(i++, customer.getCode());
-            pstm.setString(i++, customer.getName());
-            pstm.setString(i++, customer.getAddress());
-            pstm.setString(i++, customer.getPhone());
-            pstm.setString(i++, customer.getFax());
-            pstm.setString(i++, customer.getEmail());
-            pstm.setInt(i++, customer.getId());
+            pstm.setString(i++, store.getCode());
+            pstm.setString(i++, store.getName());
+            pstm.setString(i++, store.getAddress());
+            pstm.setInt(i++, store.getId());
             return pstm.executeUpdate() == 1;
         }catch(SQLException ex){
             ex.printStackTrace();
@@ -137,12 +125,12 @@ public class CustomerDao extends BaseDao{
         return false;
     }
     
-    public boolean deleteCustomer(int id){
+    public boolean deleteStore(int id){
         Connection cnn = null;
         PreparedStatement pstm = null;
         String sql = "";
         try{
-            sql = "Delete from customer where id = ?";
+            sql = "Delete from store where id = ?";
             cnn = getConnection();
             pstm = cnn.prepareStatement(sql);
             int i = 1;

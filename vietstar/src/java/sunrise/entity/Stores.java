@@ -14,10 +14,19 @@ public class Stores {
     private String code;
     private String name;
     private String address;
+    private int numrow;
 
     public Stores() {
     }
 
+    public int getNumrow() {
+        return numrow;
+    }
+
+    public void setNumrow(int numrow) {
+        this.numrow = numrow;
+    }
+    
     public int getId() {
         return id;
     }
