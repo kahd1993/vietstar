@@ -15,7 +15,9 @@ public class Exports {
     private int id;
     private String code;
     private int id_store;
+    private String store_name;
     private int id_customer;
+    private String cus_name;
     private String date;
     private BigDecimal total_amount;
     private int row;
@@ -47,12 +49,28 @@ public class Exports {
         this.id_store = id_store;
     }
 
+    public String getStore_name() {
+        return store_name;
+    }
+
+    public void setStore_name(String store_name) {
+        this.store_name = store_name;
+    }
+
     public int getId_customer() {
         return id_customer;
     }
 
     public void setId_customer(int id_customer) {
         this.id_customer = id_customer;
+    }
+
+    public String getCus_name() {
+        return cus_name;
+    }
+
+    public void setCus_name(String cus_name) {
+        this.cus_name = cus_name;
     }
 
     public String getDate() {
