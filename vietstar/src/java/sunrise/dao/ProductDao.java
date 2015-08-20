@@ -21,15 +21,14 @@ public class ProductDao extends BaseDao{
         Connection conn = null;
         PreparedStatement ps = null;
         try{
-            String sql = "INSERT INTO PRODUCT(CODE, NAME, UNIT, QUALITY, ID_STORE, PURCHASE_PRICE, SELL_PRICE) "
-                    + "   VALUES(?, ?, ?, ?, ?, ?, ?)";
+            String sql = "INSERT INTO PRODUCT(CODE, NAME, UNIT, ID_STORE, PURCHASE_PRICE, SELL_PRICE) "
+                    + "   VALUES(?, ?, ?, ?, ?, ?)";
             conn = getConnection();
             ps = conn.prepareStatement(sql);
             int i = 1;
             ps.setString(i++, pd.getCode());
             ps.setString(i++, pd.getName());
             ps.setString(i++, pd.getUnit());
-            ps.setInt(i++, pd.getQuantity());
             ps.setInt(i++, pd.getId_store());
             ps.setBigDecimal(i++, pd.getPurchase_price());
             ps.setBigDecimal(i++, pd.getSell_price());
