@@ -46,17 +46,19 @@ and open the template in the editor.
     text-shadow: none !important; 
 }
 
-.forgot a{
-    text-decoration: none;
-}
-
-.forgot a:hover{
-    color: darkred;
-}
-
 .ui-growl-image {
     width: 20px !important;
     height: 20px !important;
     margin-top: 9px !important;
     background: url("../resources/images/error.png") no-repeat !important;
+}
+
+.ui-inputfield, .ui-widget-content .ui-inputfield, .ui-widget-header .ui-inputfield {
+    -moz-box-shadow: none !important; 
+    -webkit-box-shadow: none !important; 
+    box-shadow: none !important; 
+}
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
+{
+    text-shadow: none !important;
 }

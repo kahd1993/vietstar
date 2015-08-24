@@ -116,3 +116,7 @@ body::before {
 .forgot a:hover{
     color: #448BC9;
 }
+
+.ui-button-text-only .ui-button-text {
+    padding: 0.1em 1em !important;
+}
