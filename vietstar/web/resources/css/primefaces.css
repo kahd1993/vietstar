@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Aug 20, 2015, 9:15:01 AM
+    Author     : zoncn
+*/
+
+.ui-growl {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 240px !important;
+}
+
+.ui-growl-message {
+    padding: 0 0 5px 0;
+    width: 155px !important;
+    float: right;
+}
+.ui-growl-message p{
+    color: #e74c3c;
+}
+
+.ui-growl-item {
+    background-color: rgba(241, 243, 238, 0.56);
+}
+
+.ui-growl-item {
+    display: block;
+    padding: 7px 20px !important;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    border: none !important; 
+    background: none !important; 
+    color: #ffffff;
+    text-shadow: 1px 1px 1px #333333;
+}
+
+.ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default {
+    font-weight: bold;
+    color: #4f4f4f;
+    text-shadow: none !important; 
+}
+
+.forgot a{
+    text-decoration: none;
+}
+
+.forgot a:hover{
+    color: darkred;
+}
+
+.ui-growl-image {
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: 9px !important;
+    background: url("../resources/images/error.png") no-repeat !important;
+}
