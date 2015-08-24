@@ -1,24 +1,32 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
         <title>Login</title>
         <h:outputStylesheet library="css" name="style.css"/>
+        <h:outputStylesheet library="css" name="primefaces.css"/>
     </h:head>
     <h:body>
         <div class='form animated flipInX'>
             <div class="space1"></div>
+            <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+
+            <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
+                <h:graphicImage library="images" name="ajax-loader.gif" />
+            </p:dialog>
             <div class="login-form">
-                <form>
-                    <input placeholder='Tài khoản' type='text'/>
-                    <input placeholder='Mật khẩu' type='password'/>
-                    <button class='animated infinite pulse'>Đăng nhập</button>
+                <h:form>
+                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                    <p:inputText value="#{user.lg.usn}" type="text" placeholder="Tài khoản"/>
+                    <p:password value="#{user.lg.pwd}" placeholder="Mật khẩu"/>
+                    <p:commandButton update="growl" action="#{user.login()}" value="Đăng nhập" styleClass="animated infinite pulse ui-button-text-only ui-button-text"/>
                     <div style="clear: both"></div>
                     <div style="margin-top: 10px" class="forgot">
                         <a href="#" class="forget-pass">Quên mật khẩu?</a>
                     </div>
-                </form>
+                </h:form>
             </div>
         </div>
     </h:body>
