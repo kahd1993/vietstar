@@ -2,20 +2,21 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Login</title>
         <h:outputStylesheet library="css" name="style.css"/>
         <h:outputStylesheet library="css" name="primefaces.css"/>
     </h:head>
     <h:body>
-        <div class='form animated flipInX'>
+        <div class="form animated flipInX">
             <div class="space1"></div>
-            <p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
-
-            <p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false">
-                <h:graphicImage library="images" name="ajax-loader.gif" />
-            </p:dialog>
+            <p:ajaxStatus oncomplete="setTimeout(function() { $('.ui-growl-item-container').slideUp(); }, 4000)" style="width: 64px;height: 64px;position: fixed;bottom: 5px;right: 5px;">
+                <f:facet name="start">
+                    <h:graphicImage width="64px" height="64px" library="images" name="preloader.gif" />
+                </f:facet>
+            </p:ajaxStatus>
             <div class="login-form">
                 <h:form>
                     <p:growl id="growl" sticky="true" showDetail="true" life="3000" />

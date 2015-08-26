@@ -1,12 +1,100 @@
 <?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html">
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
     <h:head>
-        <title>Facelet Title</title>
+        <title>Trang chủ</title>
+        <h:outputStylesheet library="css" name="bootstrap.css"/>
+        <h:outputStylesheet library="css" name="saoviet.css"/>
+        <h:outputStylesheet library="css" name="primefaces.css"/>
+        <h:outputScript library="js" name="jquery.min.js"/>
+        <h:outputScript library="js" name="menu.js"/>
+        <script>
+            $(document).ready(function () {
+                $('li.headlink').hover(
+                        function () {
+                            $('ul', this).css('display', 'block');
+                        },
+                        function () {
+                            $('ul', this).css('display', 'none');
+                        });
+            });
+        </script>
     </h:head>
     <h:body>
-        Hello from Facelets
+        <header>
+            <div class="bg-row">
+                <div class="col-lg-3">
+                    <img class="sv-img" src="../resources/images/logo.png"/>
+                </div>
+                <div class="col-lg-9" style="padding: 0px 109px 0px 0px">
+                    <ul class="nav-right" style="margin: 0">
+                        <li>
+                            Xin chào: Hoàng Minh Tân
+                        </li>
+                        <li>
+                            Đăng xuất
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </header>
+        <div class="main">
+            <div class="container" style="padding-left: 0; margin-top: 5px">
+                <div class="col-lg-3" style="padding-left: 9px;">
+                    <p:commandButton styleClass="import" value=""/>
+                </div>
+                <div class="col-lg-3" style="padding-left: 9px;">
+                    <!--<button style="border: none;color: black" class="export" value="aaaaaaaaa"/>-->
+                    <p:commandButton styleClass="export" value=""/>
+                </div>
+                <div class="col-lg-3" style="padding-left: 9px;">
+                    <button style="border: none" class="liability"/>
+                </div>
+                <div class="col-lg-3" style="padding-left: 9px;">
+                    <button style="border: none" class="hours"/>
+                </div>
+            </div>
+            <div class="container" style="padding-left: 0; margin-top: 1px">
+                <div class="col-lg-3" style="padding-left: 9px;">
+                    <p:commandButton styleClass="change" value=""/>
+                </div>
+                <div class="col-lg-3" style="padding-left: 9px;">
+                    <!--<button style="border: none;color: black" class="export" value="aaaaaaaaa"/>-->
+                    <!--<p:commandButton styleClass="report" value=""/>-->
+                    <ul id="cssdropdown">
+                        <li class="headlink">
+                            <p:commandButton styleClass="report" value=""/>
+                            <ul>
+                                <li><a href="http://google.com/">Google</a></li>
+                                <li><a href="http://yahoo.com/">Yahoo</a></li>
+                                <li><a href="http://live.com/">Live Search</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-3" style="padding-left: 9px;">
+                    <p:commandButton styleClass="setup" value=""/>
+                </div>
+                <div class="col-lg-3" style="padding-left: 9px;">
+                    <p:commandButton styleClass="sp" value=""/>
+                </div>
+            </div>
+            <div class="container" style="padding-left: 9px; padding-right: 10px; margin-top: 1px">
+                <div class="col-lg-7" style="background: black; min-height: 320px">
+                    Đây là cái bảng công nợ
+                </div>
+                <div class="col-lg-5" style="background: green; min-height: 320px">
+                    Đây là cái bảng hết hàng
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="col-lg-12" style="background:#585857; height: 45px; margin-top: 5px; text-align: center">
+                Design by JAVA CORE TEAM
+            </div>
+        </footer>
     </h:body>
 </html>
 

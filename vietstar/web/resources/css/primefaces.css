@@ -10,8 +10,8 @@ and open the template in the editor.
 
 .ui-growl {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 190px !important;
+    right: 210px !important;
     width: 240px !important;
 }
 
@@ -35,7 +35,7 @@ and open the template in the editor.
 
 .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
     border: none !important; 
-    background: none !important; 
+    background: none !important;
     color: #ffffff;
     text-shadow: 1px 1px 1px #333333;
 }
@@ -61,4 +61,33 @@ and open the template in the editor.
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default
 {
     text-shadow: none !important;
+}
+
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {
+    text-shadow: none !important;
+}
+
+.ui-growl-item {
+    background: none !important;
+}
+
+.ui-growl-item-container {
+    background: url("../resources/images/msg-bg.png") no-repeat !important;
+    height: 84px !important;
+    background-size: cover !important;
+}
+
+.ui-shadow {
+    -webkit-box-shadow: none !important; 
+    box-shadow: none !important; 
+}
+
+.ui-corner-all{
+    -webkit-border-radius: 0 !important;
+    border-radius: 0 !important;
+}
+
+.ui-state-default {
+    -webkit-box-shadow: none !important; 
+    box-shadow: none !important; 
 }
