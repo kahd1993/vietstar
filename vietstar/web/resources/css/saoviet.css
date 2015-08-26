@@ -18,7 +18,7 @@ and open the template in the editor.
 
 .sv-img{
     height: 50px;
-    margin: 5px 5px 5px 92px;
+    margin: 5px 5px 5px 93px;
 }
 
 .nav-right{
@@ -205,3 +205,15 @@ li.headlink:hover ul {
 #cssdropdown a { color: white; } #cssdropdown ul li a:hover { text-decoration: none; }
 /*#cssdropdown li.headlink { background-color: red; background-image: url(bg.gif); }*/
 #cssdropdown li.headlink ul {background-position: bottom; padding-bottom: 0px; }
+
+#clockbox{
+    text-align: center;
+    padding: 20px 30px;
+    font-size: 26px;
+    font-weight: 700;
+    opacity: 0.99;
+    width: 284px;
+    height: 115px;
+    color: white;
+    background: url(../resources/images/1-06.png) no-repeat center;
+}
