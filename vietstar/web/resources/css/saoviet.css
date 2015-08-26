@@ -32,8 +32,19 @@ and open the template in the editor.
     font-size: 18px;
     float: left;
     text-decoration: none;
-    padding: 18px 25px 17px 25px;
+    padding: 15px 25px 15px 25px;
     background-color: #878786;
+}
+
+.nav-right li a{
+    color: #f0b003;
+    font-family: sans-serif;
+    font-size: 18px;
+    text-decoration: none;
+}
+
+.nav-right li label{
+    color: white;
 }
 
 .nav-right li:last-child{
@@ -42,14 +53,14 @@ and open the template in the editor.
     font-size: 18px;
     float: left;
     text-decoration: none;
-    padding: 18px 25px 17px 25px;
+    padding: 15px 25px 15px 25px;
     background-color: #575756;
 }
 
 .nav-right li:last-child:hover{
     float: left;
     text-decoration: none;
-    padding: 18px 25px 17px 25px;
+    padding: 15px 25px 15px 25px;
     background-color: #878786;
     border-left: 1px solid #575756;
     cursor: pointer;
@@ -208,7 +219,7 @@ li.headlink:hover ul {
 
 @font-face{
     font-family: "digital-7";
-    src: url("../fonts/digital-7.ttf");
+    src: url("../resources/fonts/digital-7.ttf");
 }
 
 #clockbox{

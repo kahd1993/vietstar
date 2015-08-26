@@ -126,7 +126,7 @@ public class DBPoolX {
     public static void main(String[] args) throws Exception{
 //        System.out.println("Encrypter.encrypt(\"yte\")="+Encrypter.encrypt("thuoc"));
 //        System.out.println(Encrypter.decrypt("5nsytePMtk0="));
-//        System.out.println(Encrypter.encrypt("123456"));
+        System.out.println(Md5.Hash("admin"));
 //        System.out.println(Md5.Hash("123456"));
         DBPoolX poolX = DBPoolX.getInstance(Constants.DATABASE);
         if(poolX.getConnection() != null) System.out.println("success");

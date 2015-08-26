@@ -11,8 +11,6 @@ import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
-import javax.faces.context.Flash;
-import org.primefaces.context.RequestContext;
 import sunrise.dao.UserDao;
 import sunrise.entity.Users;
 
@@ -69,12 +67,13 @@ public class UserController {
             return "";
         }else{
             loggedIn = true;
-            FacesContext facesContext = FacesContext.getCurrentInstance();
-            Flash flash = facesContext.getExternalContext().getFlash();
-            flash.setKeepMessages(true);
-            flash.setRedirect(true);
-            facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Đăng nhập thành công."));
-            return "index?faces-redirect=true";
+            return "/admin/index?faces-redirect=true";
         } 
+    }
+    
+    public String logout() {
+        loggedIn = false;
+        FacesContext.getCurrentInstance().getExternalContext().invalidateSession();
+        return "/login?faces-redirect=true";
     }
 }
