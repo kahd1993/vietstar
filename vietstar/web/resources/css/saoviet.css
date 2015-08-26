@@ -206,14 +206,21 @@ li.headlink:hover ul {
 /*#cssdropdown li.headlink { background-color: red; background-image: url(bg.gif); }*/
 #cssdropdown li.headlink ul {background-position: bottom; padding-bottom: 0px; }
 
+@font-face{
+    font-family: "digital-7";
+    src: url("../fonts/digital-7.ttf");
+}
+
 #clockbox{
     text-align: center;
-    padding: 20px 30px;
-    font-size: 26px;
+    padding: 12px 70px;
+    font-size: 35px;
     font-weight: 700;
+    font-family: digital-7;
     opacity: 0.99;
     width: 284px;
     height: 115px;
     color: white;
     background: url(../resources/images/1-06.png) no-repeat center;
 }
+
