@@ -19,14 +19,15 @@
             </p:ajaxStatus>
             <div class="login-form">
                 <h:form>
-                    <p:growl id="growl" sticky="true" showDetail="true" life="3000" />
+                    <p:growl id="growl" sticky="true" showDetail="true" life="1000" />
                     <p:inputText value="#{user.lg.usn}" type="text" placeholder="Tài khoản"/>
                     <p:password value="#{user.lg.pwd}" placeholder="Mật khẩu"/>
                     <p:commandButton update="growl" action="#{user.login()}" value="Đăng nhập" styleClass="animated infinite pulse ui-button-text-only ui-button-text"/>
                     <div style="clear: both"></div>
                     <div style="margin-top: 10px" class="forgot">
-                        <a href="#" class="forget-pass">Quên mật khẩu?</a>
+                        <p:commandLink onclick="PF('forgetPass').show();" value="Quên mật khẩu?" class="forget-pass"/>
                     </div>
+                    <p:dialog widgetVar="forgetPass" header="Khôi phục mật khẩu!" resizable="false" closeOnEscape="true" draggable="false" width="400px" height="400px" modal="true" showEffect="explode" hideEffect="explode" ></p:dialog>
                 </h:form>
             </div>
         </div>
